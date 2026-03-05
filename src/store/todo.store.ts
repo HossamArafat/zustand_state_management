@@ -22,7 +22,7 @@ export const useTodoStore = create<TodoStore>()(
             (set)=> ({
                 todos: [],
                 addTodo: (task)=>
-                    set(state=> (  // merge new state (as returned small object) into the current state state (big object) depending on the change
+                    set(state=> (
                         { todos: [ ...state.todos, {id: Date.now(), task, completed: false}] }
                     )),
                 removeTodo: (id)=> 
